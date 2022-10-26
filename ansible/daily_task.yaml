@@ -1,4 +1,4 @@
-- hosts: frische_server
+- hosts: frische_server,alte_server
   remote_user: root
   gather_facts: no
   roles:
