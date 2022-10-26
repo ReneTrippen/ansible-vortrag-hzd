@@ -1,5 +1,5 @@
 [testeumel]
-142.132.183.83 inventory_hostname
+142.132.183.83 inventory_hostname=testeumel
 
 [bad_guys]
 116.202.9.249
