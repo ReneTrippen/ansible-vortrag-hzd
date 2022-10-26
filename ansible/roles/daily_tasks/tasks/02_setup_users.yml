@@ -1,0 +1,14 @@
+- name: create user
+  user:
+    name: "{{ item }}"
+  with_items:
+    - "{{ users }}"
+
+- name: copy sudoers file
+  copy:
+    src: sudoers/rene
+    dest: /etc/sudoers.d/rene
+    owner: root
+    group: root
+    mode: 0440
+

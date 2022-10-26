@@ -1,0 +1,13 @@
+- name: enable and start fail2ban
+  systemd:
+      name: fail2ban
+      state: started
+      enabled: yes
+
+- name: enable firewalld
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
+
+

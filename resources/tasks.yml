@@ -1,0 +1,11 @@
+- hosts: all
+  tasks:
+    - name: install epel software
+      dnf:
+        name: epel-release
+        state: present
+
+    - name: install default software
+      dnf:
+        name: tmux,fail2ban
+        state: present

@@ -1,0 +1,19 @@
+- hosts: frische_server
+  remote_user: root
+  gather_facts: no
+  roles:
+      - daily_tasks
+#  tasks:
+#    - name: install basic software
+#      dnf:
+#        name: "{{ item }}"
+#        state: present
+#      with_items:
+#        - epel-release
+#        - fail2ban
+#        - bash-completion    
+#    - name: enable and start fail2ban
+#      systemd:
+#          name: fail2ban
+#          state: started
+#          enabled: yes
