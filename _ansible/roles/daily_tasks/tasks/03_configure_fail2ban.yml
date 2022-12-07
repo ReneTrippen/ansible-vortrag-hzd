@@ -1,0 +1,7 @@
+- name: copy fail2ban sshd conf
+  copy:
+    src: fail2ban/sshd.conf
+    dest: /etc/fail2ban/jail.d/sshd.conf
+  notify: restart fail2ban service
+    
+
