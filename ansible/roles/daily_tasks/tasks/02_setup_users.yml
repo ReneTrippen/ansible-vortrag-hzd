@@ -1,21 +1,3 @@
-- name: create user
+- name: setup user
   user:
-    name: "{{ item }}"
-  with_items:
-    - "{{ users }}"
-
-- name: copy sudoers file
-  copy:
-    src: sudoers/rene
-    dest: /etc/sudoers.d/rene
-    owner: root
-    group: root
-    mode: 0440
-
-- name: copy ssh pub key
-  ansible.posix.authorized_key:
-    user: rene
-    key: "{{ item }}"
-  with_file:
-    - ssh-pub-keys/rene.pub
-
+    name: rene

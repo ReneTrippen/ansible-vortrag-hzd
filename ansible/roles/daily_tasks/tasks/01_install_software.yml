@@ -1,4 +1,4 @@
-- name: install basic software
+- name: install software
   dnf:
     name: "{{ item }}"
     state: present
@@ -6,4 +6,3 @@
     - epel-release
     - fail2ban
     - bash-completion
-    - vim

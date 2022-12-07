@@ -1,0 +1,19 @@
+- hosts: all
+  gather_facts: no
+  remote_user: root
+  roles:
+    - daily_tasks
+    #  tasks:
+    #    - name: install software
+    #      dnf:
+    #        name: "{{ item }}"
+    #        state: present
+    #      with_items:
+    #        - epel-release
+    #        - fail2ban
+    #        - bash-completion
+    #
+    #    - name: ensure chronyd is running
+    #      service:
+    #        name: chronyd
+    #        state: started
