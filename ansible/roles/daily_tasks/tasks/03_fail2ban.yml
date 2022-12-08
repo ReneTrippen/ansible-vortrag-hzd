@@ -1,10 +1,6 @@
-- name: enable sshd
+- name: enable fail2ban
   copy:
     src: fail2ban-sshd.conf
     dest: /etc/fail2ban/jail.d/sshd.conf
+  notify: restart fail2ban
 
-- name: restart fail2ban
-  systemd:
-    name: fail2ban
-    state: restarted
-    enabled: yes
