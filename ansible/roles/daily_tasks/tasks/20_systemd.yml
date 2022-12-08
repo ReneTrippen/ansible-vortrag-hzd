@@ -1,0 +1,5 @@
+- name: start and enable firewalld
+  systemd:
+    name: firewalld
+    state: started
+    enabled: yes

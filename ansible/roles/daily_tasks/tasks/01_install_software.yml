@@ -1,8 +1,14 @@
-- name: install software
+- name: install EPEL first 
   dnf:
     name: "{{ item }}"
     state: present
   with_items:
     - epel-release
+
+- name: install software
+  dnf:
+    name: "{{ item }}"
+    state: present
+  with_items:
     - fail2ban
     - bash-completion

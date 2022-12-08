@@ -1,3 +1,15 @@
 - name: setup user
   user:
-    name: rene
+    name: "{{ item }}"
+  with_items:
+    - "{{ users }}"
+
+- name: copy hzd demo key for awx
+  ansible.posix.authorized_key:
+    user: "{{ item }}"
+    state: present
+    key: "{{ lookup('file', 'ssh-pub-keys/hzd.pub') }}"
+  with_items:
+    - root
+    - "{{ users }}"
+
