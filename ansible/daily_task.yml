@@ -1,6 +1,6 @@
 - hosts: all
   gather_facts: no
-  remote_user: root
+  remote_user: root 
   roles:
     - daily_tasks
     #  tasks:

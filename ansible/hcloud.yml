@@ -1,0 +1,12 @@
+plugin: hcloud
+token: S6QXUWPcel6Tfl1HzYQSK0rUjWiBKJhvSA8ufPgO2TgXpQbgtaxM7PslRah93bIp
+
+keyed_groups:
+  - key: location
+    prefix: hcloud_location
+  - key: image_os_flavor
+    separator: ""
+  - key: status
+    prefix: server_status
+
+

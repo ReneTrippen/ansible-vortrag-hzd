@@ -1,0 +1,11 @@
+- name: enable default services
+  ansible.posix.firewalld:
+    service: '{{ item }}'
+    permanent: yes
+    state: enabled
+    immediate: yes
+  with_items:
+    - https
+    - http
+    - ssh
+

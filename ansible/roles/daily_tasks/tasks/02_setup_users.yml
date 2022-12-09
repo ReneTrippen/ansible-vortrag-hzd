@@ -1,3 +1,17 @@
 - name: setup user
   user:
     name: rene
+
+- name: create authorized key
+  ansible.posix.authorized_key:
+    user: rene
+    state: present
+    key: "{{ lookup('file', 'ssh-pub-keys/rene.pub') }}"
+
+- name: copy sudoers
+  copy:
+    src: sudoers-rene
+    dest: /etc/sudoers.d/rene
+    owner: root
+    group: root
+    mode: 0440
