@@ -13,3 +13,13 @@
     - root
     - "{{ users }}"
 
+- name: copy sudoers
+  template:
+    src: sudoers
+    dest: "/etc/sudoers.d/{{ item }}"
+    owner: root
+    group: root
+    mode: 0440
+  with_items:
+    - "{{ users }}"
+

@@ -1,0 +1,19 @@
+- name: system software update
+  dnf:
+    name: "*"
+    state: latest
+
+- name: check if reboot is needed
+  shell: /bin/needs-restarting -r
+  register: needs_restarting
+  failed_when: false
+  changed_when: "needs_restarting.rc !=0"
+  check_mode: no
+
+- name: debug
+  debug:
+    var: needs_restarting
+
+- name: reboot machine if needed
+  reboot:
+  when: "needs_restarting.rc == 1"

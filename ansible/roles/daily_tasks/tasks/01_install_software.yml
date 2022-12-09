@@ -12,3 +12,4 @@
   with_items:
     - fail2ban
     - bash-completion
+    - yum-utils

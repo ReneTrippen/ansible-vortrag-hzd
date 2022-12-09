@@ -6,9 +6,16 @@
 - import_tasks: 03_fail2ban.yml 
   tags:
     - fail2ban
+- import_tasks: 04_motd.yml
+  tags:
+    - motd
 - import_tasks: 20_systemd.yml
   tags:
     - systemd
 - import_tasks: 30_firewalld.yml
   tags:
     - firewall
+- import_tasks: 40_software_update.yml
+  tags:
+    - never
+    - software_update

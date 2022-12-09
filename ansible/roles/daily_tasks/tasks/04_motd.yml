@@ -1,0 +1,4 @@
+- name: set motd
+  template:
+    src: motd
+    dest: /etc/motd

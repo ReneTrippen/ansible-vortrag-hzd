@@ -7,3 +7,4 @@
     - fail2ban
     - bash-completion
     - vim
+    - yum-utils
