@@ -1,0 +1,15 @@
+- name: run update
+  yum:
+    name: "*"
+    state: latest
+
+- name: check if restart is needed
+  shell: /bin/needs-restarting -r
+  register: needs_restarting
+  failed_when: false
+  changed_when: "needs_restarting.rc !=0"
+  check_mode: no
+
+- name: reboot machine if needed
+  reboot:
+  when: needs_restarting.rc != 0
